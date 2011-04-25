@@ -1,0 +1,6 @@
+Script con mencoder para codificar mkv a avi, pegando los subtitulos y todo eso...
+
+
+git commit -m 'first commit'
+git remote add origin git@github.com:ErunamoJAZZ/mkv2avi.git
+git push -u origin master
