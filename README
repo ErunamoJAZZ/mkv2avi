@@ -1,6 +1,42 @@
-Script con mencoder para codificar mkv a avi, pegando los subtitulos y todo eso...
+Script para codificar mkv -> avi Usando mencoder, pegando los subtitulos y todo eso...
 
 
+Filtros sobre el video
+ * Hue(Saluración) a 1.2
+ * Escalado a 704x396px usando el algoritmo Lanczos3
+ * unsharp(nitidez) de: cromancia 0.5 , luminancia 0.2
+ * hqdn3d (HighQualityDeNoice3D, limpieza de la imagen) por default
+ * ass, filtro para pegar los subtitulos del mkv con libass
+ 
+ 
+Parametros del codec (xvid)
+ * Bitrate promedio, 950kps 
+ * ¡¡Codificación a dos pasadas!!
+ * Nivel de VHQ, 4 
+ * Modo Cartoon habilitado
+ * Chroma Motion habilitado
+ * Chroma Optimizado habilitado
+ * Adaptative Quantization habilitado
+ * Trellis habilitado
+ * Quantizer ratio: 1.62
+ * Quantizer offset: 0 (desactivado)
+ * bvhq, como VHQ pero para frames tipo B
+ * Codificación multi-thread (multi-hilo). 
+   Pasada1= 2 hilos, Pasada2= 3 hilos 
+   (para un procesador de menos nucleos, bajar los threads)
+
+
+Parametros del codec (mp3)
+ * Bitrate variable en modo 2 (algoritmo rh)
+ * VBR alta calidad, en un rango de 170-210 kbps(preset=standard)
+
+
+
+
+-----
 git commit -m 'first commit'
 git remote add origin git@github.com:ErunamoJAZZ/mkv2avi.git
 git push -u origin master
+
+
+jueves 28 abril 2011 
