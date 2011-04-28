@@ -27,7 +27,7 @@ Parametros del codec (xvid)
 
 
 Parametros del codec (mp3)
- * Bitrate variable en modo 2 (algoritmo rh)
+ * Bitrate variable en modo 3 (algoritmo arb)
  * VBR alta calidad, en un rango de 170-210 kbps(preset=standard)
 
 
