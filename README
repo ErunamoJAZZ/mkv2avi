@@ -13,7 +13,7 @@ Parametros del codec (xvid)
  * Bitrate promedio, 950kps 
  * ¡¡Codificación a dos pasadas!!
  * Nivel de VHQ, 4 
- * Modo Cartoon habilitado
+ * Modo Cartoon NO HABILITADO (Se ve mejor sin esto)
  * Chroma Motion habilitado
  * Chroma Optimizado habilitado
  * Adaptative Quantization habilitado
@@ -34,8 +34,7 @@ Parametros del codec (mp3)
 
 
 -----
-git commit -m 'first commit'
-git remote add origin git@github.com:ErunamoJAZZ/mkv2avi.git
+git commit -a
 git push -u origin master
 
 
