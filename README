@@ -1,29 +1,43 @@
 Script para codificar mkv -> avi Usando mencoder, pegando los subtitulos y todo eso...
 
+¡¡Funciona con mencoder!!. Asegurese de tener una copia compilada del 2011 
+para no tener problemas (algunos parametros solo están en versiones actuales). 
+En Windows, puede obtener una copia actualizada del mplayer y mencoder 
+para consola desde http://oss.netfarm.it/mplayer-win32.php
+
+
+---------------------------
+---------------------------
 
 Filtros sobre el video
- * Hue(Saluración) a 1.2
  * Escalado a 704x396px usando el algoritmo Lanczos3
  * unsharp(nitidez) de: cromancia 0.5 , luminancia 0.2
+ * Mejorado del contraste con eq=0:5
  * hqdn3d (HighQualityDeNoice3D, limpieza de la imagen) por default
  * ass, filtro para pegar los subtitulos del mkv con libass
+   NOTA: si los subtitulos no se ven, es posible que el video fuente 
+         no esté a 23.976fps, sinó a 29.97fsp.
+         Para corregir esto, cambie así en el parametro correspondiente=>
+         fixpts=fps=30000/1001,ass,fixpts -ass
  
  
 Parametros del codec (xvid)
- * Bitrate promedio, 950kps 
+ * Bitrate promedio, 950kps aproximadamente,
+   el archivo pesará aproximadamente 200MB al final
  * ¡¡Codificación a dos pasadas!!
  * Nivel de VHQ, 4 
  * Modo Cartoon NO HABILITADO (Se ve mejor sin esto)
  * Chroma Motion habilitado
  * Chroma Optimizado habilitado
  * Adaptative Quantization habilitado
+ * Emaquetado de bitstream
  * Trellis habilitado
  * Quantizer ratio: 1.62
  * Quantizer offset: 0 (desactivado)
  * bvhq, como VHQ pero para frames tipo B
  * Codificación multi-thread (multi-hilo). 
-   Pasada1= 2 hilos, Pasada2= 3 hilos 
-   (para un procesador de menos nucleos, bajar los threads)
+   Pasada1= 2 hilos, Pasada2= 2 hilos 
+   (para un procesador de más nucleos, subir los threads)
 
 
 Parametros del codec (mp3)
@@ -38,4 +52,4 @@ git commit -a
 git push -u origin master
 
 
-jueves 28 abril 2011 
+lunes 02 mayo 2011
